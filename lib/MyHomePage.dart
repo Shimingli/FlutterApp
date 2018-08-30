@@ -1,0 +1,33 @@
+import 'package:flutter/cupertino.dart';
+
+/*
+ * 从字面理解，StatelessWidget 是没有内部状态的即不可变。而 StatefulWidget 具有状态，即是可刷新的。
+ * 当你构建的 UI 元素中有些部分是不变的，那么使用 StatelessWidget 是一个不错的选择(App log)
+ */
+class MyHomePage extends StatefulWidget{
+  /*
+  tatelessWidget 和 StatefulWidget 的核心内容是一致的，它们都会在每一帧中被重构，
+  不同之处在于 StatefulWidget 有一个 State 对象，它可以为 StatefulWidget 在不同帧之间存储数据。
+   */
+  @override
+  State<StatefulWidget> createState() {
+    return new MyHomePageState();
+  }
+}
+/**
+ * HTTP 请求后获得的数据或用户交互来刷新 UI ，此时就需要使用
+ * StatefulWidget 然后主动告诉 Flutter 底层 Widget 的状态发生了变化，只有如此 Flutter 才会刷新对应的 Widget
+ */
+class MyHomePageState extends State<MyHomePage> {
+  @override
+  void initState() {
+    super.initState();
+
+  }
+  // widget 相当于 View，Widget的实例仅仅存在每一帧之间，并且每一帧之间 Flutter都会主动的创建一颗Widget树用于下一帧的渲染。
+  //Android 中 View 是可变的，在 Flutter 中的 Widget 是不可变的。这种特性使得 Flutter 中的 Widget 变得十分轻量级
+  @override
+  Widget build(BuildContext context) {
+    return null;
+  }
+}
