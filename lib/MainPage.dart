@@ -75,7 +75,7 @@ class MainPageState extends State<MainPage> with TickerProviderStateMixin {
       view.controller.dispose();
     }
   }
-
+  //  Flutter 中 UI 的布局是通过在 dart 文件中构建 Widget 树来实现的。
   // widget 相当于 View，Widget的实例仅仅存在每一帧之间，并且每一帧之间 Flutter都会主动的创建一颗Widget树用于下一帧的渲染。
   //Android 中 View 是可变的，在 Flutter 中的 Widget 是不可变的。这种特性使得 Flutter 中的 Widget 变得十分轻量级
   @override

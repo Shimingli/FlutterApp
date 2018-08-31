@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/widget/CustomButton.dart';
 
 
 class TabOne extends StatefulWidget{
@@ -10,7 +11,8 @@ class TabOne extends StatefulWidget{
 class TabOneState extends State<TabOne>{
   @override
   Widget build(BuildContext context) {
-    return new Text("nihao");
+    //return new Text("nihao");
+    return new Container(child: new CustomButton("nihao"),);
   }
 
 }
