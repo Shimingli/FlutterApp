@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/MyHomePage.dart';
+import 'package:flutter_app/MainPage.dart';
+
 
 void main() => runApp(new MyApp());
 
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
       theme: new ThemeData(
         primarySwatch: Colors.pink,
       ),
-      home: new MyHomePage(),
+      home: new MainPage(),
       //原来的Demo
 //      home: new MyHomePage(title: 'Flutter Demo 牛逼Home Page'),
     );
