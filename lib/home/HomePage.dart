@@ -35,6 +35,7 @@ class HomePageState extends State<HomePage> {
     ));
   }
 
+
   Widget titleWidget() {
     return new Container(
         child: new Row(
