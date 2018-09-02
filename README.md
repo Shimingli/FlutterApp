@@ -19,6 +19,8 @@
 *  GestureDetector 我们可以监听广泛的手势
 *  要充分利用应用程序中的 Material 风格的组件的话，可以把顶级部件 MaterialApp 作为应用程序的入口。MaterialApp 作为一个比较方便的部件，包装了许多实现了 Material 风格所需要的部件（如 Scaffold ）。MaterialApp 是在 WidgetsApp 的基础上进行实现的
 *  Api的接口 [Api](https://github.com/jokermonn/-Api/blob/master/KingsoftDic.md)
+
+*  Flutter 不会自动导入包
 ## Getting Started
 * For help getting started with Flutter, view our online
 [documentation](https://flutter.io/).
