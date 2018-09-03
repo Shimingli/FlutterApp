@@ -21,6 +21,9 @@
 *  Api的接口 [Api](https://github.com/jokermonn/-Api/blob/master/KingsoftDic.md)
 
 *  Flutter 不会自动导入包
+*  Column 相当于 相对布局  Row 线性布局 
+*  首页的数据结构展示 
+
 ## Getting Started
 * For help getting started with Flutter, view our online
 [documentation](https://flutter.io/).
