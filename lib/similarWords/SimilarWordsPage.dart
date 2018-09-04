@@ -13,6 +13,7 @@ class SimilarWordsPage extends StatefulWidget {
 
 class SimilarWordsPageState extends State<SimilarWordsPage> {
   List<DataBean> datas = [];
+  static int i=0;
   final TextEditingController _textController = new TextEditingController();
 
   @override
@@ -30,6 +31,7 @@ class SimilarWordsPageState extends State<SimilarWordsPage> {
       body: new ListView.builder(
         itemCount: datas.length,
         itemBuilder: (BuildContext context, int position) {
+          i=position;
           return getRow(position);
         },
       ),
@@ -109,7 +111,7 @@ class SimilarWordsPageState extends State<SimilarWordsPage> {
                 new Expanded(
                     child: new OutlineButton(
                       borderSide:new BorderSide(color: Theme.of(context).primaryColor),
-                      child: new Text(' ',style: new TextStyle(color: Theme.of(context).primaryColor),),
+                      child: new Text('条目 = '+i.toString(),style: new TextStyle(color: Theme.of(context).primaryColor),),
                       onPressed: (){},
                     )
                 ),

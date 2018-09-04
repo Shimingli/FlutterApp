@@ -9,6 +9,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.0
   fluttertoast: ^2.0.7 #"Packages get" 要去主动的 get 一次依赖
+  dio: ^v1.0.3 # 添加网络依赖
 
 dev_dependencies:
   flutter_test:

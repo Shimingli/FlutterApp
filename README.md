@@ -25,6 +25,7 @@
 *  首页的数据结构展示 
 *  HttpClient 导入的包是  io里面的  
 *  Built build\app\outputs\apk\debug\app-debug.apk (31.9MB).
+*  [APi](https://api.douban.com/v2/movie/in_theaters?apikey=0b2bdeda43b5688921839c8ecb20399b&city=%E6%B7%B1%E5%9C%B3&start=0&count=100&client=somemessage&udid=dddddddddddddddddddddd)
 
 ## Getting Started
 * For help getting started with Flutter, view our online
