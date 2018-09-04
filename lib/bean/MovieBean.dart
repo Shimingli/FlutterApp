@@ -9,7 +9,7 @@ class MovieBean {
   final String movieImages;
   final String movieName;
   final String castsAcatars;//所有主演的头像的集合
-  final String castsName;//所有主演的评分
+  final String castsName;//所有主演的姓名
   final String ratingAverage;//电影的评分
   final String collect_count;//多少人看过
 
@@ -30,12 +30,12 @@ class MovieBean {
   }
 
   static MovieBean map(subject,title,total) {
-     title="查找的信息："+title;
-     total="一共查询到的数据："+total.toString();
+     title=title;
+     total="查询到的数据共有："+total.toString()+"条";
      var castsAcatars="";
      var castsName="";
      for(int i=0;i<subject["casts"].length;i++){
-       castsName=subject["casts"][i]["name"];
+       castsName=castsName+" "+subject["casts"][i]["name"];
         var c= subject["casts"][i]["avatars"]["medium"];
            if(i!=subject["casts"].length-1) {
              castsAcatars = castsAcatars + c.toString()+"****";
@@ -46,7 +46,7 @@ class MovieBean {
      }
      var ratingAverage= "评分："+subject['rating']['average'].toString();
      //一路改过来
-     var collect_count= "一共有"+subject['collect_count'].toString()+"人看过";
+     var collect_count= "一共有："+subject['collect_count'].toString()+"人看过";
 
     return new MovieBean(title, total, subject["images"]["medium"], subject['title'],
         castsAcatars,

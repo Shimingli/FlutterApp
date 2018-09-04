@@ -26,6 +26,8 @@
 *  HttpClient 导入的包是  io里面的  
 *  Built build\app\outputs\apk\debug\app-debug.apk (31.9MB).
 *  [APi](https://api.douban.com/v2/movie/in_theaters?apikey=0b2bdeda43b5688921839c8ecb20399b&city=%E6%B7%B1%E5%9C%B3&start=0&count=100&client=somemessage&udid=dddddddddddddddddddddd)
+*  解决的Bug的时候太痛苦了，Flutter 使用 ide ，太痛苦了
+* 在脑袋要构思出 这个布局的整体的结构 
 
 ## Getting Started
 * For help getting started with Flutter, view our online
