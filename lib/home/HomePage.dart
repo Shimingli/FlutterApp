@@ -43,7 +43,6 @@ class HomePageState extends State<HomePage> {
             new Text("仕明同学", style: new TextStyle(
                 color: Colors.blueGrey, letterSpacing: 1.00),),
             new Expanded(
-
                 child: new FlatButton.icon(
                   // 点击事件
                     onPressed: () {

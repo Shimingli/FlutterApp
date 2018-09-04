@@ -1,21 +1,29 @@
 import 'dart:convert';
 
+import 'package:fluttertoast/fluttertoast.dart';
+
 class DataBean {
   final String key;
   final String message;
 
   DataBean(this.message, this.key);
-
+  static List<DataBean> datas = new List<DataBean>();
   //转化data
   static List<DataBean> decodeData(String data) {
-    List<DataBean> datas = new List<DataBean>();
+    datas.clear();
     var newData = json.decode(data);
     var results = newData['message'];
+    if(results.length==0){
+      Fluttertoast.showToast(
+          msg: "没有查找到相似词，请重新输入",
+          timeInSecForIos: 1,
+          bgcolor: "#e74c3c",
+          textcolor: '#ffffff'
+      );
+    }
     for (int i = 0; i < results.length; i++) {
       datas.add(forMap(results[i]));
     }
-    // print(datas[0].key);
-    print(datas[0].message);
     return datas;
   }
 
@@ -27,12 +35,28 @@ class DataBean {
     var value = result["value"];
     var c = "";
     List means = result["means"];
+    if(means.length==0){
+//      Fluttertoast.showToast(
+//          msg: "没有查找到相似词，请重新输入",
+//          timeInSecForIos: 1,
+//          bgcolor: "#e74c3c",
+//          textcolor: '#ffffff'
+//      );
+    }
     for (int i = 0; i < means.length; i++) {
       var mean = means[i];
       // print("-------");
       // print(mean);
       //{part: vi., means: [被弄脏，变脏]}
       List meanO = mean['means'];
+//        if(meanO.isEmpty){
+//        Fluttertoast.showToast(
+//            msg: "没有查找到相似词，请重新输入",
+//            timeInSecForIos: 1,
+//            bgcolor: "#e74c3c",
+//            textcolor: '#ffffff'
+//        );
+//      }
       // print(meanO);
       for(int i=0;i<meanO.length;i++){
         c=c+meanO[i]+" ";

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/TabIconView.dart';
 import 'package:flutter_app/home/HomePage.dart';
 import 'package:flutter_app/my/MyPage.dart';
+import 'package:flutter_app/similarWords/SimilarWordsPage.dart';
 
 /*
  * 从字面理解，StatelessWidget 是没有内部状态的即不可变。而 StatefulWidget 具有状态，即是可刷新的。
@@ -41,6 +42,11 @@ class MainPageState extends State<MainPage> with TickerProviderStateMixin {
         vsync: this,
       ),
       new TabIconView(
+        icon: new Icon(Icons.all_inclusive),
+        title: new Text("寻找近义词"),
+        vsync: this,//一定必须的要传入，要不然直接报错  todo   2018.9.4
+      ),
+      new TabIconView(
         icon: new Icon(Icons.people),
         title: new Text("关于我"),
         // ignore: argument_type_not_assignable
@@ -54,9 +60,9 @@ class MainPageState extends State<MainPage> with TickerProviderStateMixin {
     // 两个页面
     pageArray = <StatefulWidget>[
       new HomePage(),
+      new SimilarWordsPage(),
       new MyPage()
     ];
-//    currentPage = pageArray[cuttentIndex] as StatefulWidget;
     currentPage = pageArray[cuttentIndex];
   }
 
