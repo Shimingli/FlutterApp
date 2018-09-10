@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/TabIconView.dart';
 import 'package:flutter_app/home/HomePage.dart';
 import 'package:flutter_app/my/MyPage.dart';
+import 'package:flutter_app/official/OfficialNetWorkPage.dart';
 import 'package:flutter_app/similarWords/SimilarWordsPage.dart';
 
 /*
@@ -46,6 +47,8 @@ class MainPageState extends State<MainPage> with TickerProviderStateMixin {
         title: new Text("寻找近义词"),
         vsync: this,//一定必须的要传入，要不然直接报错  todo   2018.9.4
       ),
+    new TabIconView(icon: new Icon(Icons.open_with),title: new Text("官方Demo"),vsync: this)
+      ,
       new TabIconView(
         icon: new Icon(Icons.people),
         title: new Text("关于我"),
@@ -61,6 +64,7 @@ class MainPageState extends State<MainPage> with TickerProviderStateMixin {
     pageArray = <StatefulWidget>[
       new HomePage(),
       new SimilarWordsPage(),
+      new OfficialNetWorkPage(),
       new MyPage()
     ];
     currentPage = pageArray[cuttentIndex];
