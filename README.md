@@ -27,7 +27,8 @@
 *  Built build\app\outputs\apk\debug\app-debug.apk (31.9MB).
 *  [APi](https://api.douban.com/v2/movie/in_theaters?apikey=0b2bdeda43b5688921839c8ecb20399b&city=%E6%B7%B1%E5%9C%B3&start=0&count=100&client=somemessage&udid=dddddddddddddddddddddd)
 *  解决的Bug的时候太痛苦了，Flutter 使用 ide ，太痛苦了
-* 在脑袋要构思出 这个布局的整体的结构 
+*  在脑袋要构思出 这个布局的整体的结构 
+*  https://www.cnblogs.com/dreamyu/p/8032588.html 关闭系统自带的防火墙，重启OK  由于需要出差，就是用的是笔记本开发，导致自己笔记本的防火墙没有被关闭，真的是日了狗了
 
 ## Getting Started
 * For help getting started with Flutter, view our online
