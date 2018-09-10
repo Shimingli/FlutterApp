@@ -83,27 +83,28 @@ class TabTwoState extends State<TabTwo> {
     return new Padding(
       padding: const EdgeInsets.only(
         top: 10.0,
-        left: 10.0,
-        right: 10.0,
+        left: 5.0,
+        right: 5.0,
         bottom: 10.0,
       ),
       child: new Row(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           new Image.network(
             data[0],
-            width: 80.0,
-            height: 100.0,
+            width:  MediaQuery.of(context).size.width / 3,
+            height: 120.0,
           ),
           new Image.network(
             data[0],
-            width: 80.0,
-            height: 100.0,
+            width:  MediaQuery.of(context).size.width / 3,
+            height: 120.0,
           ),
           //if(data.length>1){
           new Image.network(
             data[0],
-            width: 80.0,
-            height: 100.0,
+            width:  MediaQuery.of(context).size.width / 3,
+            height: 120.0,
           ),
         ],
       ),

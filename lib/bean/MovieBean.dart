@@ -35,14 +35,25 @@ class MovieBean {
      var castsAcatars="";
      var castsName="";
      for(int i=0;i<subject["casts"].length;i++){
-       castsName=castsName+" "+subject["casts"][i]["name"];
-        var c= subject["casts"][i]["avatars"]["medium"];
-           if(i!=subject["casts"].length-1) {
-             castsAcatars = castsAcatars + c.toString()+"****";
-           }else{
+       if(subject["casts"][i]["avatars"]!=null) {
+         castsName = castsName + " " + subject["casts"][i]["name"];
+         var c = subject["casts"][i]["avatars"]["medium"];
+         if (i != subject["casts"].length - 1) {
+           if (c == null) {
+             print("shiming1=" + c);
+           } else {
+             castsAcatars = castsAcatars + c.toString() + "****";
+           }
+         } else {
+           if (c == null) {
+             print("shiming2=" + c);
+           } else {
              castsAcatars = castsAcatars + c.toString();
            }
-
+         }
+       }else{
+         print("为空了哦");
+       }
      }
      var ratingAverage= "评分："+subject['rating']['average'].toString();
      //一路改过来

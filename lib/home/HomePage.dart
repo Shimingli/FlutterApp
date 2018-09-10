@@ -56,10 +56,10 @@ class HomePageState extends State<HomePage> {
                     text: "控件摆放",
                   ),
                   new Tab(
-                    text: "测试-----",
+                    text: "列表展示",
                   ),
                   new Tab(
-                    text: "测试",
+                    text: "其他控件展示",
                   ),
                 ]),
           ),
