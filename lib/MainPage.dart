@@ -19,16 +19,17 @@ class MainPage extends StatefulWidget {
 //    return new MainPageState();
 //  }
   @override
-  State<StatefulWidget> createState() =>new MainPageState();
+  State<StatefulWidget> createState() => new MainPageState();
 }
+
 /**
  * HTTP 请求后获得的数据或用户交互来刷新 UI ，此时就需要使用
  * StatefulWidget 然后主动告诉 Flutter 底层 Widget 的状态发生了变化，只有如此 Flutter 才会刷新对应的 Widget
  */
 class MainPageState extends State<MainPage> with TickerProviderStateMixin {
-  List<TabIconView> tabIconViewArray;
-  StatefulWidget currentPage;
-  List<StatefulWidget> pageArray;
+  late List<TabIconView> tabIconViewArray;
+  late StatefulWidget currentPage;
+  late List<StatefulWidget> pageArray;
   int cuttentIndex = 0;
 
   //初始化State  有时候网络请求 也必须在这里面
@@ -45,10 +46,12 @@ class MainPageState extends State<MainPage> with TickerProviderStateMixin {
       new TabIconView(
         icon: new Icon(Icons.all_inclusive),
         title: new Text("寻找近义词"),
-        vsync: this,//一定必须的要传入，要不然直接报错  todo   2018.9.4
+        vsync: this, //一定必须的要传入，要不然直接报错  todo   2018.9.4
       ),
-    new TabIconView(icon: new Icon(Icons.open_with),title: new Text("官方Demo"),vsync: this)
-      ,
+      new TabIconView(
+          icon: new Icon(Icons.open_with),
+          title: new Text("官方Demo"),
+          vsync: this),
       new TabIconView(
         icon: new Icon(Icons.people),
         title: new Text("关于我"),
@@ -71,9 +74,7 @@ class MainPageState extends State<MainPage> with TickerProviderStateMixin {
   }
 
   void rebuild() {
-    setState(() {
-
-    });
+    setState(() {});
   }
 
   //当该对象从树中永久移除时调用。
@@ -85,6 +86,7 @@ class MainPageState extends State<MainPage> with TickerProviderStateMixin {
       view.controller.dispose();
     }
   }
+
   //  Flutter 中 UI 的布局是通过在 dart 文件中构建 Widget 树来实现的。
   // widget 相当于 View，Widget的实例仅仅存在每一帧之间，并且每一帧之间 Flutter都会主动的创建一颗Widget树用于下一帧的渲染。
   //Android 中 View 是可变的，在 Flutter 中的 Widget 是不可变的。这种特性使得 Flutter 中的 Widget 变得十分轻量级
@@ -97,7 +99,6 @@ class MainPageState extends State<MainPage> with TickerProviderStateMixin {
         ),
         bottomNavigationBar: buildBar(),
       ),
-
       theme: new ThemeData.light(),
     );
   }

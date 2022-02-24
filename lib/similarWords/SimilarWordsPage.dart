@@ -13,13 +13,13 @@ class SimilarWordsPage extends StatefulWidget {
 
 class SimilarWordsPageState extends State<SimilarWordsPage> {
   List<DataBean> datas = [];
-  static int i=0;
+  static int i = 0;
   final TextEditingController _textController = new TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      appBar: findAppBar(),
+      // appBar: findAppBar(),
       backgroundColor: Colors.black12,
       body: findBody(),
     );
@@ -31,7 +31,7 @@ class SimilarWordsPageState extends State<SimilarWordsPage> {
       body: new ListView.builder(
         itemCount: datas.length,
         itemBuilder: (BuildContext context, int position) {
-          i=position;
+          i = position;
           return getRow(position);
         },
       ),
@@ -74,17 +74,23 @@ class SimilarWordsPageState extends State<SimilarWordsPage> {
                 if (_textController.text.isEmpty) {
                   Fluttertoast.showToast(
                       msg: "输入为空，请重新输入",
-                      timeInSecForIos: 1,
-                      bgcolor: "#e74c3c",
-                      textcolor: '#ffffff');
+                      toastLength: Toast.LENGTH_SHORT,
+                      gravity: ToastGravity.CENTER,
+                      timeInSecForIosWeb: 1,
+                      backgroundColor: Colors.red,
+                      textColor: Colors.white,
+                      fontSize: 16.0);
                 } else {
                   FocusNode focusNode = new FocusNode();
                   FocusScope.of(context).requestFocus(new FocusNode());
                   Fluttertoast.showToast(
                       msg: "查找值为：" + _textController.text,
-                      timeInSecForIos: 1,
-                      bgcolor: "#e74c3c",
-                      textcolor: '#ffffff');
+                      toastLength: Toast.LENGTH_SHORT,
+                      gravity: ToastGravity.CENTER,
+                      timeInSecForIosWeb: 1,
+                      backgroundColor: Colors.red,
+                      textColor: Colors.white,
+                      fontSize: 16.0);
                   getApiData(_textController.text);
                   focusNode.unfocus();
                 }
@@ -110,15 +116,17 @@ class SimilarWordsPageState extends State<SimilarWordsPage> {
               children: <Widget>[
                 new Expanded(
                     child: new OutlineButton(
-                      borderSide:new BorderSide(color: Theme.of(context).primaryColor),
-                      child: new Text('条目 = '+i.toString(),style: new TextStyle(color: Theme.of(context).primaryColor),),
-                      onPressed: (){},
-                    )
-                ),
+                  borderSide:
+                      new BorderSide(color: Theme.of(context).primaryColor),
+                  child: new Text(
+                    '条目 = ' + i.toString(),
+                    style: new TextStyle(color: Theme.of(context).primaryColor),
+                  ),
+                  onPressed: () {},
+                )),
               ],
             ),
           ),
-
           new Container(
             child: new Text(
               "联想到的词：" + datas[i].key,

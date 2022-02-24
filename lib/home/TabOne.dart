@@ -67,7 +67,7 @@ class TabOneState extends State<TabOne> {
       MovieBean data = datas[i];
       var gd = new GestureDetector(
         onTap: () {
-         // BindTab();
+          // BindTab();
         },
         child: new Column(
           children: <Widget>[

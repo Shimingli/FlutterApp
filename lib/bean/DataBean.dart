@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class DataBean {
@@ -7,18 +8,23 @@ class DataBean {
   final String message;
 
   DataBean(this.message, this.key);
-  static List<DataBean> datas = new List<DataBean>();
+
+  static List<DataBean> datas = <DataBean>[];
+
   //转化data
   static List<DataBean> decodeData(String data) {
     datas.clear();
     var newData = json.decode(data);
     var results = newData['message'];
-    if(results.length==0){
+    if (results.length == 0) {
       Fluttertoast.showToast(
           msg: "没有查找到相似词，请重新输入",
-          timeInSecForIos: 1,
-          bgcolor: "#e74c3c",
-          textcolor: '#ffffff'
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.CENTER,
+          timeInSecForIosWeb: 1,
+          backgroundColor: Colors.red,
+          textColor: Colors.white,
+          fontSize: 16.0
       );
     }
     for (int i = 0; i < results.length; i++) {
@@ -35,7 +41,7 @@ class DataBean {
     var value = result["value"];
     var c = "";
     List means = result["means"];
-    if(means.length==0){
+    if (means.length == 0) {
 //      Fluttertoast.showToast(
 //          msg: "没有查找到相似词，请重新输入",
 //          timeInSecForIos: 1,
@@ -58,8 +64,8 @@ class DataBean {
 //        );
 //      }
       // print(meanO);
-      for(int i=0;i<meanO.length;i++){
-        c=c+meanO[i]+" ";
+      for (int i = 0; i < meanO.length; i++) {
+        c = c + meanO[i] + " ";
       }
     }
     //var mean = means["means"];

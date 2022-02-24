@@ -9,6 +9,9 @@ import 'package:flutter_app/utils/ToastUtil.dart';
 
 // 麻痹这一行代码 还是我主动添加的  真的日了狗了
 import 'package:fluttertoast/fluttertoast.dart';
+import 'dart:convert';
+
+import 'package:flutter/material.dart';
 
 /**
  * 主页
@@ -29,24 +32,27 @@ class HomePageState extends State<HomePage> {
         child: new Scaffold(
           appBar: new AppBar(
             backgroundColor: Colors.black45,
-           // title: titleWidget(),
-            title: new Text("首页",style: new TextStyle(color: Colors.white,fontSize: 22.00),),
+            // title: titleWidget(),
+            title: new Text(
+              "首页",
+              style: new TextStyle(color: Colors.white, fontSize: 22.00),
+            ),
             actions: <Widget>[
               new IconButton(
-                  icon: new Icon(Icons.add_a_photo), onPressed: () {
-                Navigator
-                    .of(context)
-                    .push(new MaterialPageRoute(builder: (context) {
-                  return new OtherPage();
-                }));
-              })
+                  icon: new Icon(Icons.add_a_photo),
+                  onPressed: () {
+                    Navigator.of(context)
+                        .push(new MaterialPageRoute(builder: (context) {
+                      return new OtherPage();
+                    }));
+                  })
             ],
             bottom: new TabBar(
                 isScrollable: true,
-                labelStyle: new TextStyle(fontSize: 22.00,color: Colors.red),
-                indicatorPadding:EdgeInsets.zero,
+                labelStyle: new TextStyle(fontSize: 22.00, color: Colors.red),
+                indicatorPadding: EdgeInsets.zero,
                 labelColor: Colors.white,
-                indicatorWeight:4.0,
+                indicatorWeight: 4.0,
                 unselectedLabelColor: Colors.blueAccent,
                 tabs: [
                   new Tab(
@@ -63,7 +69,12 @@ class HomePageState extends State<HomePage> {
                   ),
                 ]),
           ),
-          body: new TabBarView(children: [new TabOne(), new TabTwo(),new TabThree(),new TabFroth()]),
+          body: new TabBarView(children: [
+            new TabOne(),
+            new TabTwo(),
+            new TabThree(),
+            new TabFroth()
+          ]),
         ));
   }
 
@@ -82,22 +93,14 @@ class HomePageState extends State<HomePage> {
                       print("发生了点击事件");
                       Fluttertoast.showToast(
                           msg: "你点我干什么？",
-                          timeInSecForIos: 1,
-                          bgcolor: "#e74c3c",
-                          textcolor: '#ffffff');
-                      //todo  以下的实现估计有点问题
-//                      ToastUtils.showToast(msg: "我是自定义实现的哦",
-//                         // ignore: ambiguous_import
-//                         //toastLength: Toast.LENGTH_SHORT,
-//                          // ignore: ambiguous_import
-//                          //gravity: ToastGravity.CENTER,
-//                          //gravity: ToastGravity.BOTTOM, // ignore: ambiguous_import
-//                          timeInSecForIos: 1,
-//                          bgcolor: "#e74c3c",
-//                          textcolor: '#ffffff'
-//                      );
-                      Navigator
-                          .of(context)
+                          // toastLength: Toast.LENGTH_SHORT,
+                          // gravity: ToastGravity.CENTER,
+                          timeInSecForIosWeb: 1,
+                          backgroundColor: Colors.red,
+                          textColor: Colors.white,
+                          fontSize: 16.0
+                      );
+                      Navigator.of(context)
                           .push(new MaterialPageRoute(builder: (context) {
                         return new OtherPage();
                       }));

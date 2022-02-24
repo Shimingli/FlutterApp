@@ -70,7 +70,7 @@ class TabTwoState extends State<TabTwo> {
         child: new Column(
           children: <Widget>[
             buildImage(split),
-          //  new
+            //  new
           ],
         ),
       );
@@ -92,18 +92,18 @@ class TabTwoState extends State<TabTwo> {
         children: <Widget>[
           new Image.network(
             data[0],
-            width:  MediaQuery.of(context).size.width / 3,
+            width: MediaQuery.of(context).size.width / 3,
             height: 120.0,
           ),
           new Image.network(
             data[0],
-            width:  MediaQuery.of(context).size.width / 3,
+            width: MediaQuery.of(context).size.width / 3,
             height: 120.0,
           ),
           //if(data.length>1){
           new Image.network(
             data[0],
-            width:  MediaQuery.of(context).size.width / 3,
+            width: MediaQuery.of(context).size.width / 3,
             height: 120.0,
           ),
         ],

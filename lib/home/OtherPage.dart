@@ -21,7 +21,6 @@ class OtherPageState extends State<OtherPage> {
         appBar: findAppBar(),
         body: findBody(),
       ),
-
     );
   }
 
@@ -35,23 +34,25 @@ class OtherPageState extends State<OtherPage> {
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
-                  icon: new Icon(Icons.cancel, color: Colors.red,),
-                  label: new Text("退出")
-              ),
+                  icon: new Icon(
+                    Icons.cancel,
+                    color: Colors.red,
+                  ),
+                  label: new Text("退出")),
               width: 120.0,
             ),
-            new Expanded(child: new TextField(
+            new Expanded(
+                child: new TextField(
               autofocus: true, //自动获取键盘，键盘弹起来
-              decoration: new InputDecoration.collapsed(hintText: "我是edittext",
+              decoration: new InputDecoration.collapsed(
+                  hintText: "我是edittext",
                   hintStyle: new TextStyle(color: Colors.black)),
             ))
-
           ],
         ),
         decoration: new BoxDecoration(
             color: Colors.white10,
-            borderRadius: const BorderRadius.all(const Radius.circular(3.0))
-        ),
+            borderRadius: const BorderRadius.all(const Radius.circular(3.0))),
       ),
     );
   }
@@ -61,8 +62,9 @@ class OtherPageState extends State<OtherPage> {
       child: new Column(
         children: <Widget>[
           new Container(
-            child: new Text("文本", style: new TextStyle(
-                fontWeight: FontWeight.bold, fontSize: 16.0)),
+            child: new Text("文本",
+                style:
+                    new TextStyle(fontWeight: FontWeight.bold, fontSize: 16.0)),
             margin: const EdgeInsets.only(top: 16.0, left: 16.0, bottom: 16.0),
             alignment: Alignment.topLeft,
           ),
@@ -70,9 +72,12 @@ class OtherPageState extends State<OtherPage> {
             children: <Widget>[
               new Container(
                 child: new Chip(
-                  label: new FlatButton(onPressed: () {},
+                  label: new FlatButton(
+                      onPressed: () {},
                       child: new Text(
-                        "你好Flutter", style: new TextStyle(color: Colors.red),)),
+                        "你好Flutter",
+                        style: new TextStyle(color: Colors.red),
+                      )),
                   backgroundColor: Colors.yellow,
                 ),
                 margin: const EdgeInsets.only(left: 16.0, bottom: 16.0),
@@ -80,7 +85,8 @@ class OtherPageState extends State<OtherPage> {
               ),
               new Container(
                 child: new Chip(
-                  label: new FlatButton(onPressed: () {},
+                  label: new FlatButton(
+                      onPressed: () {},
                       child: new Text("你好Flutter",
                           style: new TextStyle(color: Colors.red))),
                   backgroundColor: Colors.blue,
@@ -94,7 +100,8 @@ class OtherPageState extends State<OtherPage> {
             children: <Widget>[
               new Container(
                 child: new Chip(
-                  label: new FlatButton(onPressed: () {},
+                  label: new FlatButton(
+                      onPressed: () {},
                       child: new Text("你好Flutter",
                           style: new TextStyle(color: Colors.red))),
                   backgroundColor: Colors.black,
@@ -105,8 +112,9 @@ class OtherPageState extends State<OtherPage> {
             ],
           ),
           new Container(
-            child: new Text("文本T", style: new TextStyle(
-                fontWeight: FontWeight.bold, fontSize: 16.0)),
+            child: new Text("文本T",
+                style:
+                    new TextStyle(fontWeight: FontWeight.bold, fontSize: 16.0)),
             margin: const EdgeInsets.only(left: 16.0, bottom: 16.0),
             alignment: Alignment.topLeft,
           ),
@@ -114,14 +122,17 @@ class OtherPageState extends State<OtherPage> {
             child: new Row(
               children: <Widget>[
                 new Container(
-                  child: new Icon(
-                      Icons.accessibility, color: Colors.pink, size: 16.0),
+                  child: new Icon(Icons.accessibility,
+                      color: Colors.pink, size: 16.0),
                   margin: const EdgeInsets.only(right: 12.0),
                 ),
                 new Expanded(
                   child: new Container(
-                    child: new Text("test", style: new TextStyle(
-                        color: Colors.purple, fontSize: 14.0),),
+                    child: new Text(
+                      "test",
+                      style:
+                          new TextStyle(color: Colors.purple, fontSize: 14.0),
+                    ),
                   ),
                 ),
                 new Container(
@@ -130,24 +141,24 @@ class OtherPageState extends State<OtherPage> {
                     onTap: () {
                       Fluttertoast.showToast(
                           msg: "删除不掉的，我是点击事件的第二种实现的方式",
-                          timeInSecForIos: 1,
-                          bgcolor: "#e74c3c",
-                          textcolor: '#ffffff'
-                      );
+                          toastLength: Toast.LENGTH_SHORT,
+                          gravity: ToastGravity.CENTER,
+                          timeInSecForIosWeb: 1,
+                          backgroundColor: Colors.red,
+                          textColor: Colors.white,
+                          fontSize: 16.0);
                     },
                   ),
                 )
               ],
             ),
-            margin: const EdgeInsets.only(
-                left: 16.0, right: 16.0, bottom: 10.0),
+            margin:
+                const EdgeInsets.only(left: 16.0, right: 16.0, bottom: 10.0),
             padding: const EdgeInsets.only(bottom: 10.0),
             decoration: new BoxDecoration(
                 border: new BorderDirectional(
-                    bottom: new BorderSide(color: Colors.black12))
-            ),
+                    bottom: new BorderSide(color: Colors.black12))),
           ),
-
           new Container(
             child: new Column(
               children: <Widget>[
@@ -155,8 +166,7 @@ class OtherPageState extends State<OtherPage> {
                   child: new TextField(
                     decoration: new InputDecoration(
                         hintText: "问题1",
-                        hintStyle: new TextStyle(color: Colors.black)
-                    ),
+                        hintStyle: new TextStyle(color: Colors.black)),
                   ),
                   margin: const EdgeInsets.all(16.0),
                 ),
@@ -164,8 +174,7 @@ class OtherPageState extends State<OtherPage> {
                   child: new TextField(
                     decoration: new InputDecoration(
                         hintText: "问题1",
-                        hintStyle: new TextStyle(color: Colors.black)
-                    ),
+                        hintStyle: new TextStyle(color: Colors.black)),
                   ),
                   margin: const EdgeInsets.all(16.0),
                 ),
@@ -173,8 +182,7 @@ class OtherPageState extends State<OtherPage> {
                   child: new TextField(
                     decoration: new InputDecoration(
                         hintText: "问题1",
-                        hintStyle: new TextStyle(color: Colors.black)
-                    ),
+                        hintStyle: new TextStyle(color: Colors.black)),
                   ),
                   margin: const EdgeInsets.all(16.0),
                 ),
@@ -182,8 +190,7 @@ class OtherPageState extends State<OtherPage> {
                   child: new TextField(
                     decoration: new InputDecoration(
                         hintText: "问题1",
-                        hintStyle: new TextStyle(color: Colors.black)
-                    ),
+                        hintStyle: new TextStyle(color: Colors.black)),
                   ),
                   margin: const EdgeInsets.all(16.0),
                 ),
@@ -191,8 +198,7 @@ class OtherPageState extends State<OtherPage> {
                   child: new TextField(
                     decoration: new InputDecoration(
                         hintText: "问题1",
-                        hintStyle: new TextStyle(color: Colors.black)
-                    ),
+                        hintStyle: new TextStyle(color: Colors.black)),
                   ),
                   margin: const EdgeInsets.all(16.0),
                 ),
@@ -200,8 +206,7 @@ class OtherPageState extends State<OtherPage> {
                   child: new TextField(
                     decoration: new InputDecoration(
                         hintText: "问题1",
-                        hintStyle: new TextStyle(color: Colors.black)
-                    ),
+                        hintStyle: new TextStyle(color: Colors.black)),
                   ),
                   margin: const EdgeInsets.all(16.0),
                 ),
@@ -212,5 +217,4 @@ class OtherPageState extends State<OtherPage> {
       ),
     );
   }
-
 }

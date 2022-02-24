@@ -12,6 +12,7 @@ class MyPage extends StatefulWidget {
 
 class MyPageState extends State<MyPage> {
   List widgets = [];
+
   @override
   void initState() {
     super.initState();
@@ -63,7 +64,7 @@ class MyPageState extends State<MyPage> {
                   centerSlice: new Rect.fromLTRB(400.0, 400.0, 1360.0, 1500.0),
                 ),
                 borderRadius:
-                const BorderRadius.all(const Radius.circular(6.0))),
+                    const BorderRadius.all(const Radius.circular(6.0))),
           ),
           aspectRatio: 3.0 / 2.0,
         ),
